@@ -14,7 +14,7 @@ def main():
            break
 
 
-
+# function to add a task
 def add_task():
     task= input("task:")
     with open("tasks.txt", "a") as file:
@@ -24,12 +24,14 @@ def add_task():
         file.write(f"{number}. {task}\n")
     print(f"Task added: {number}. {task}")
 
+#function to view a task
 def view_task():
     with open("tasks.txt", "r") as file:
         lines=file.readlines()
         for line in lines:
             print(line.strip())
 
+#function to delete task
 def delete_task():
     with open("tasks.txt", "r") as file:
         lines = file.readlines()
@@ -60,5 +62,6 @@ def delete_task():
                 tasks_text=parts[0].strip()
             file.write(f"{i}.{tasks_text}\n")
         print(f"task{task_to_delete} deleted successfully!!!")
+
 
 main()
